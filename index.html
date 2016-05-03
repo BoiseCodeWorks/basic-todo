@@ -1,0 +1,28 @@
+<html ng-app="basic-todo">
+<head>
+    <meta charset="UTF-8">
+    <title>basic todo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-controller="TodoController as tc">
+    
+    <form ng-submit="tc.addItem(tc.newItem)">
+        <input type="text" ng-model="tc.newItem.task">
+        <input type="text" ng-model="tc.newItem.delegate">
+        <button type="submit">Add Item</button>
+        <button type="reset">GO AWAY</button>
+    </form>
+    
+    <ul>
+        <li ng-repeat="item in tc.list" ng-click="tc.toggleItemState(item)" ng-class="{'strike': item.completed}">
+            {{item.task}} - {{item.delegate}}
+        </li>
+    </ul>
+    
+    
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
