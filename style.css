@@ -1,6 +1,7 @@
 body{
     color: aqua;
     background: black;
+    font-size: 2em;
 }
 .strike{
     text-decoration: line-through;
